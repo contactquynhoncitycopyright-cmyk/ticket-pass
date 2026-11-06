@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TICKET PASS - Quản trị</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- PREMIUM ADMIN SIDEBAR -->
+<aside class="admin-sidebar">
+    <h2>TICKET PASS</h2>
+    <p class="sidebar-label">MENU QUẢN LÝ</p>
+
+   
+<nav>
+    <a href="#admin-overview">Tổng quan</a>
+    <a href="#admin-pending">Vé chờ duyệt</a>
+    <a href="#admin-approved">Vé đã duyệt</a>
+    <a href="#admin-rejected">Vé đã từ chối</a>
+    <a href="#admin-posts">Quản lý bài viết</a>
+</nav>
+
+
+    <p class="sidebar-location">QUY NHƠN</p>
+</aside>
+
+    <header class="header">
+        <div class="logo">TICKET PASS <span>ADMIN</span></div>
+
+        <nav>
+            <a href="index.html">Về trang chủ</a>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+
+        <div class="admin-header">
+    <div>
+        <p class="admin-brand">TICKET PASS / ADMIN</p>
+        <h1>Trung tâm quản trị</h1>
+        <p class="admin-subtitle">
+            Quản lý và kiểm duyệt vé tại Quy Nhơn
+        </p>
+    </div>
+
+    <button id="admin-logout">
+        ĐĂNG XUẤT
+    </button>
+</div>
+        <p class="admin-subtitle">
+            Kiểm tra và quản lý yêu cầu đăng vé
+        </p>
+
+        <div class="admin-stats" id="admin-overview">
+            <!-- ADMIN TICKET FILTERS -->
+<div class="admin-filters">
+    <h2>BỘ LỌC VÉ</h2>
+
+    <input
+        type="text"
+        id="admin-search"
+        placeholder="Tìm theo tên phim..."
+    >
+
+    <select id="admin-cinema-filter">
+        <option value="all">Tất cả các rạp</option>
+        <option value="CGV Kim Cúc Plaza">CGV Kim Cúc Plaza</option>
+        <option value="Starlight Quy Nhơn">Starlight Quy Nhơn</option>
+        <option value="DCINE Quy Nhơn">DCINE Quy Nhơn</option>
+    </select>
+
+    <input type="date" id="admin-date-filter">
+
+    <button type="button" id="admin-reset-filter">
+        XÓA BỘ LỌC
+    </button>
+</div>
+
+            <div class="admin-stat-card">
+                <h3>Yêu cầu chờ duyệt</h3>
+                <p id="pending-count">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Đã duyệt</h3>
+                <p id="approved-count">0</p>
+            </div>
+
+            <div class="admin-stat-card">
+                <h3>Đã từ chối</h3>
+                <p id="rejected-count">0</p>
+            </div>
+
+        </div>
+
+        <section class="admin-section" id="admin-pending">
+
+            <h2>DANH SÁCH YÊU CẦU</h2>
+
+            <div id="admin-ticket-list">
+                <p>Chưa có yêu cầu đăng vé.</p>
+            </div>
+
+        </section>
+        <!-- APPROVED TICKETS -->
+
+<section class="admin-section" id="admin-approved">
+
+    <h2>VÉ ĐÃ DUYỆT</h2>
+
+    <div id="approved-ticket-list">
+        <p>Chưa có vé được duyệt.</p>
+    </div>
+
+</section>
+
+
+<!-- REJECTED TICKETS -->
+
+
+<section class="admin-section" id="admin-rejected">
+
+    <h2>VÉ ĐÃ TỪ CHỐI</h2>
+
+    <div id="rejected-ticket-list">
+        <p>Chưa có vé bị từ chối.</p>
+    </div>
+
+</section>
+
+<!-- QUẢN LÝ BÀI VIẾT CỘNG ĐỒNG -->
+<section class="admin-section" id="admin-posts">
+
+    <h2>QUẢN LÝ BÀI VIẾT CỘNG ĐỒNG</h2>
+
+    <p>Danh sách bài viết được đăng bởi thành viên TICKET PASS.</p>
+
+    <div id="admin-post-list">
+        <p>Đang tải bài viết...</p>
+    </div>
+
+</section>
+
+
+    </main>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

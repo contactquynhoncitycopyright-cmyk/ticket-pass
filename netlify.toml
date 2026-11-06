@@ -1,0 +1,14 @@
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/config"
+  to = "/.netlify/functions/config"
+  status = 200
+
+[[redirects]]
+  from = "/api/movies"
+  to = "/.netlify/functions/movies"
+  status = 200

@@ -1,0 +1,4931 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101116;
+    color: #ffffff;
+}
+
+/* HEADER */
+
+header {
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #171820;
+    border-bottom: 1px solid #292a33;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #e8b84a;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #c5c5cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #e8b84a;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-weight: bold;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+}
+
+.btn-sell {
+    background: #e8b84a;
+    color: #171820;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 430px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #101116 10%, rgba(16,17,22,0.8) 55%, rgba(16,17,22,0.3)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.subtitle {
+    color: #e8b84a;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #e8b84a;
+}
+
+.hero-content > p:not(.subtitle) {
+    color: #c5c5cc;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.btn-explore {
+    display: inline-block;
+    background: #e8b84a;
+    color: #171820;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+
+.movies,
+.tickets {
+    padding: 65px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+}
+
+.section-heading > a {
+    color: #e8b84a;
+    text-decoration: none;
+}
+
+/* MOVIE CARDS */
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.movie-card {
+    background: #1b1c25;
+    padding: 12px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-image {
+    height: 230px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-one {
+    background-image: url("https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=500");
+}
+
+.image-two {
+    background-image: url("https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500");
+}
+
+.image-three {
+    background-image: url("https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500");
+}
+
+.image-four {
+    background-image: url("https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=500");
+}
+
+.movie-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.movie-card p {
+    color: #999aa5;
+    font-size: 13px;
+}
+
+/* TICKETS */
+
+.empty-state {
+    background: #1b1c25;
+    border: 1px dashed #555;
+    border-radius: 10px;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.empty-state p {
+    color: #999aa5;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 7%;
+    background: #171820;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: #999aa5;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .movie-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .movie-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .movie-image {
+        height: 160px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* TICKET LIST */
+
+.ticket-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.ticket-card {
+    background: #1b1c25;
+    border: 1px solid #343540;
+    border-radius: 12px;
+    padding: 22px;
+    transition: 0.2s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    border-color: #e8b84a;
+}
+
+.ticket-card h3 {
+    color: #e8b84a;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.ticket-card p {
+    color: #c5c5cc;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.ticket-card span {
+    display: inline-block;
+    background: #263d31;
+    color: #72d99a;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+    .ticket-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ticket-list {
+        grid-template-columns: 1fr;
+    }
+}
+.ticket-search {
+    margin-bottom: 25px;
+}
+
+.ticket-search input {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    background: #1b1c25;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.ticket-search input:focus {
+    border-color: #e8b84a;
+}
+
+/* TICKET DETAIL POPUP */
+
+.ticket-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-content {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: #1b1c25;
+    border: 1px solid #e8b84a;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    animation: popupAppear 0.25s ease;
+}
+
+.popup-content h2 {
+    color: #e8b84a;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.popup-details p {
+    color: #d0d0d5;
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    padding: 5px 12px;
+}
+
+.close-popup:hover {
+    color: #e8b84a;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* SELL TICKET FORM */
+
+#sell-popup .popup-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#sell-ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#sell-ticket-form label {
+    color: #d0d0d5;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#sell-ticket-form input,
+#sell-ticket-form select,
+#sell-ticket-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: #101116;
+    border: 1px solid #454650;
+    border-radius: 6px;
+    color: white;
+    font: inherit;
+}
+
+#sell-ticket-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+#sell-ticket-form input:focus,
+#sell-ticket-form select:focus,
+#sell-ticket-form textarea:focus {
+    outline: none;
+    border-color: #e8b84a;
+}
+
+.btn-sell-submit {
+    background: #e8b84a;
+    color: #171820;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+/* ADMIN DASHBOARD */
+
+.admin-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.admin-container h1 {
+    color: #e8b84a;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.admin-subtitle {
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.admin-stat-card {
+    background: #1b1c25;
+    border: 1px solid #454650;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.admin-stat-card h3 {
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.admin-stat-card p {
+    color: #e8b84a;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.admin-section {
+    background: #1b1c25;
+    border: 1px solid #454650;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.admin-section h2 {
+    color: #e8b84a;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+#admin-ticket-list {
+    color: #ccc;
+}
+
+@media (max-width: 700px) {
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-container {
+        padding: 15px;
+    }
+}
+/* ADMIN ACTION BUTTONS */
+
+.admin-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.admin-actions button {
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-actions button:first-child {
+    background: #238b57;
+    color: white;
+}
+
+.admin-actions button:last-child {
+    background: #c94343;
+    color: white;
+}
+
+.admin-actions button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.admin-section .ticket-card {
+    margin-bottom: 18px;
+    padding: 22px;
+    border: 1px solid #454650;
+    border-radius: 10px;
+    background: #171820;
+}
+
+.admin-section .ticket-card h3 {
+    color: #e8b84a;
+    margin-bottom: 12px;
+}
+/* ADMIN LOGIN PAGE */
+
+.admin-login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.admin-login-box {
+    width: 100%;
+    max-width: 420px;
+    background: #1b1c25;
+    border: 1px solid #e8b84a;
+    border-radius: 14px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.admin-login-box h1 {
+    color: #e8b84a;
+    text-align: center;
+    font-size: 30px;
+}
+
+.admin-login-box > p {
+    color: #aaa;
+    text-align: center;
+    margin: 10px 0 30px;
+}
+
+.admin-login-box h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#admin-login-form label {
+    color: #ddd;
+    font-size: 14px;
+}
+
+#admin-login-form input {
+    padding: 13px;
+    background: #101116;
+    border: 1px solid #454650;
+    border-radius: 6px;
+    color: white;
+}
+
+#admin-login-form input:focus {
+    outline: none;
+    border-color: #e8b84a;
+}
+
+#admin-login-form button {
+    margin-top: 15px;
+    padding: 14px;
+    background: #e8b84a;
+    color: #171820;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login-message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+/* TICKET PASS - PREMIUM ADMIN */
+
+body {
+    background: #f7f5ef;
+    color: #292820;
+}
+
+.admin-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.admin-container h1 {
+    color: #292820;
+    font-size: 32px;
+}
+
+.admin-subtitle {
+    color: #777368;
+}
+
+.admin-stat-card,
+.admin-section {
+    background: #fffefa;
+    border: 1px solid #e8e1d2;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(50, 40, 20, 0.04);
+}
+
+.admin-stat-card h3 {
+    color: #777368;
+}
+
+.admin-stat-card p {
+    color: #b58b3b;
+}
+
+.admin-section h2 {
+    color: #292820;
+}
+
+.admin-section .ticket-card {
+    background: #fffefa;
+    border: 1px solid #e8e1d2;
+    border-radius: 12px;
+}
+
+.admin-section .ticket-card h3 {
+    color: #a77d2e;
+}
+
+.admin-section .ticket-card p {
+    color: #625e54;
+}
+
+#admin-logout {
+    background: #292820;
+    color: #fffefa;
+    padding: 12px 22px;
+    border-radius: 8px;
+}
+/* PREMIUM ADMIN HEADER */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e8e1d2;
+}
+
+.admin-brand {
+    color: #b58b3b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.admin-header h1 {
+    margin-bottom: 10px;
+}
+
+.admin-header .admin-subtitle {
+    margin-bottom: 0;
+}
+
+.admin-header button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.admin-header button:hover {
+    background: #a77d2e;
+}
+
+@media (max-width: 600px) {
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* PREMIUM STATISTICS */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.admin-stat-card {
+    position: relative;
+    padding: 28px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(50, 40, 20, 0.08);
+}
+
+.admin-stat-card h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.admin-stat-card p {
+    font-size: 36px;
+    margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+}
+/* PREMIUM TICKET MANAGEMENT */
+
+.admin-section {
+    padding: 30px;
+    margin-bottom: 28px;
+}
+
+.admin-section h2 {
+    font-size: 19px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee8dc;
+}
+
+.admin-section .ticket-card {
+    padding: 24px;
+    margin-bottom: 18px;
+    transition: box-shadow 0.2s;
+}
+
+.admin-section .ticket-card:hover {
+    box-shadow: 0 8px 20px rgba(50, 40, 20, 0.07);
+}
+
+.admin-section .ticket-card h3 {
+    font-size: 19px;
+    margin-bottom: 16px;
+}
+
+.admin-section .ticket-card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.admin-actions {
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.admin-actions button {
+    border: none;
+    min-width: 120px;
+}
+/* PREMIUM ADMIN SIDEBAR */
+
+.admin-sidebar {
+    position: fixed;
+    top: 67px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 67px);
+    padding: 30px 20px;
+    background: #fffefa;
+    border-right: 1px solid #e8e1d2;
+    z-index: 100;
+}
+
+.admin-sidebar h2 {
+    color: #a77d2e;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+.sidebar-label {
+    color: #999184;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.admin-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-sidebar nav a {
+    display: block;
+    padding: 13px 14px;
+    color: #625e54;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.admin-sidebar nav a:hover {
+    background: #f3eddf;
+    color: #a77d2e;
+}
+
+.sidebar-location {
+    position: absolute;
+    bottom: 30px;
+    color: #a77d2e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* DỊCH NỘI DUNG SANG BÊN PHẢI */
+
+.admin-container {
+    max-width: none;
+    margin: 40px 40px 40px 290px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .admin-sidebar {
+        position: static;
+        width: auto;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e8e1d2;
+    }
+
+    .admin-sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-location {
+        display: none;
+    }
+
+    .admin-container {
+        margin: 30px 15px;
+    }
+}
+/* FIX ADMIN PAGE ALIGNMENT */
+
+body {
+    margin: 0;
+}
+
+.admin-sidebar {
+    left: 0;
+    top: 67px;
+    box-sizing: border-box;
+    width: 250px;
+}
+
+.admin-container {
+    box-sizing: border-box;
+}
+/* FIX SIDEBAR POSITION */
+
+.admin-sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 75px);
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.admin-container {
+    margin-left: 290px;
+}
+/* SMOOTH ADMIN NAVIGATION */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.admin-container section,
+.admin-stats {
+    scroll-margin-top: 30px;
+}
+
+.admin-sidebar nav a {
+    transition: all 0.25s ease;
+}
+
+.admin-sidebar nav a:hover {
+    padding-left: 20px;
+    background: #f3eddf;
+    color: #a77d2e;
+}
+/* FIXED SIDEBAR */
+
+.admin-sidebar {
+    position: fixed !important;
+    top: 75px;
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 75px);
+    overflow-y: auto;
+    z-index: 999;
+    box-sizing: border-box;
+}
+/* FIXED ADMIN HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 75px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #171820;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Chừa khoảng trống cho Header */
+body {
+    padding-top: 75px;
+}
+
+/* Sidebar nằm ngay dưới Header */
+.admin-sidebar {
+    position: fixed !important;
+    top: 75px;
+    left: 0;
+    height: calc(100vh - 75px);
+    z-index: 999;
+}
+/* ACTIVE SIDEBAR MENU */
+
+.admin-sidebar nav a:focus,
+.admin-sidebar nav a:target {
+    background: #f3eddf;
+    color: #a77d2e;
+    font-weight: bold;
+    border-left: 3px solid #b58b3b;
+}
+/* PREMIUM ADMIN FILTERS */
+
+.admin-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 30px;
+    background: #fffefa;
+    border: 1px solid #e8e1d2;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(50, 40, 20, 0.04);
+}
+
+.admin-filters h2 {
+    grid-column: 1 / -1;
+    color: #292820;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.admin-filters input,
+.admin-filters select {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    background: #f7f5ef;
+    color: #292820;
+    border: 1px solid #e8e1d2;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.admin-filters input:focus,
+.admin-filters select:focus {
+    outline: none;
+    border-color: #b58b3b;
+}
+
+#admin-reset-filter {
+    padding: 13px 18px;
+    background: #292820;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#admin-reset-filter:hover {
+    background: #a77d2e;
+}
+
+@media (max-width: 900px) {
+    .admin-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .admin-filters h2 {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 550px) {
+    .admin-filters {
+        grid-template-columns: 1fr;
+    }
+}
+/* FIX ADMIN FILTER SIZE */
+
+.admin-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 30px;
+}
+
+.admin-filters h2 {
+    grid-column: 1 / -1;
+    font-size: 20px;
+}
+
+.admin-filters input,
+.admin-filters select {
+    width: 100%;
+    min-height: 50px;
+    padding: 14px 16px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+#admin-search {
+    grid-column: 1 / -1;
+}
+
+#admin-reset-filter {
+    grid-column: 1 / -1;
+    min-height: 48px;
+    font-size: 14px;
+}
+
+@media (max-width: 550px) {
+    .admin-filters {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    #admin-search,
+    #admin-reset-filter {
+        grid-column: auto;
+    }
+}
+/* TICKET FILTERS - TRANG CHU */
+
+.ticket-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #171820;
+    border: 1px solid #34343b;
+    border-radius: 14px;
+}
+
+.ticket-search,
+.cinema-filter {
+    width: 100%;
+}
+
+.ticket-search input,
+.cinema-filter select {
+    width: 100%;
+    min-height: 50px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    background: #22232c;
+    color: #fff;
+    border: 1px solid #444550;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.ticket-search input:focus,
+.cinema-filter select:focus {
+    outline: none;
+    border-color: #e8b84a;
+}
+
+.ticket-search input::placeholder {
+    color: #aaa;
+}
+
+.cinema-filter select {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .ticket-filters {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        margin: 20px 15px;
+    }
+}
+/* =========================
+   TMDB MOVIE SECTION
+========================= */
+
+.movies-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.movies-section h2 {
+    color: #e8b84a;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.movies-section > p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    background: #20212a;
+    border: 1px solid #383943;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+}
+
+.movie-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.no-poster {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    background: #30313a;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 12px;
+    min-height: 40px;
+}
+
+.movie-info p {
+    color: #bbb;
+    font-size: 13px;
+    margin: 7px 0;
+}
+/* =========================
+   FEATURED VIDEO
+========================= */
+
+.featured-video {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #171820;
+    border: 1px solid #383943;
+    border-radius: 16px;
+}
+
+.featured-video h2 {
+    color: #e8b84a;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.featured-video > p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .featured-video {
+        margin: 25px 15px;
+        padding: 15px;
+    }
+
+    .featured-video h2 {
+        font-size: 21px;
+    }
+}
+/* VIDEO PHIM ĐANG CHIẾU */
+
+.featured-movie-video {
+    width: 100%;
+    max-width: 850px;
+    aspect-ratio: 16 / 9;
+    max-height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #000;
+    border: 1px solid #383943;
+}
+.featured-movie-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+.tv-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tv-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 12px;
+    box-sizing: border-box;
+    background: linear-gradient(145deg, #333, #080808);
+    border: 3px solid #555;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+}
+
+.tv-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+.tv-stand {
+    width: 180px;
+    height: 22px;
+    background: linear-gradient(#444, #111);
+    clip-path: polygon(30% 0, 70% 0, 85% 100%, 15% 100%);
+}
+
+/* FIX NÚT PASS VÉ */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-actions .btn-sell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    min-height: 46px;
+    padding: 12px 22px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FIX POPUP ĐĂNG VÉ */
+#sell-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#sell-popup .popup-content {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 35px;
+    border-radius: 16px;
+    background: #171820;
+    color: white;
+}
+
+#sell-popup h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+#sell-popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#sell-popup form label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+#sell-popup form input,
+#sell-popup form select,
+#sell-popup form textarea {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #454650;
+    border-radius: 8px;
+    background: #252630;
+    color: white;
+    font-size: 15px;
+}
+
+#sell-popup form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#sell-popup .btn-sell-submit {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    #sell-popup .popup-content {
+        padding: 22px;
+    }
+}
+
+/* =================================
+   TICKET PASS - MOVIE POSTERS
+================================= */
+
+.movies {
+    padding: 60px 5%;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.movie-card {
+    overflow: hidden;
+    background: #191a22;
+    border: 1px solid #30313a;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-7px);
+    border-color: #e8b84a;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 310px;
+    display: block;
+    object-fit: cover;
+    background: #252630;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h3 {
+    color: #fff;
+    font-size: 17px;
+    margin: 0 0 12px;
+    min-height: 42px;
+}
+
+.movie-info p {
+    color: #aaa;
+    font-size: 13px;
+    margin: 7px 0;
+}
+
+/* =================================
+   MUSIC SECTION
+================================= */
+
+.music-section {
+    padding: 60px 5%;
+    background: linear-gradient(135deg, #171820, #24202a);
+    border-top: 1px solid #33313b;
+    border-bottom: 1px solid #33313b;
+}
+
+.music-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 35px auto 0;
+    padding: 25px;
+    background: #191a22;
+    border: 1px solid #38343d;
+    border-radius: 16px;
+}
+
+.music-cover {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.music-cover img {
+    width: 100%;
+    height: 320px;
+    display: block;
+    object-fit: cover;
+}
+
+.music-info h3 {
+    color: #fff;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.music-info > p:not(.subtitle) {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.music-player {
+    width: 100%;
+    margin-top: 22px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.music-player iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+    .movie-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .movie-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .movie-poster {
+        height: 240px;
+    }
+
+    .music-content {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .music-cover img {
+        height: 240px;
+    }
+
+    .music-info h3 {
+        font-size: 22px;
+    }
+}
+
+/* =====================================
+   TICKET PASS - COMMUNITY LAYOUT FIX
+===================================== */
+
+.community {
+    display: block;
+    width: 100%;
+    padding: 60px 5%;
+    box-sizing: border-box;
+    background: #101116;
+    color: #fff;
+}
+
+.community .section-heading {
+    margin-bottom: 30px;
+}
+
+.community-hero {
+    width: 100%;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    box-sizing: border-box;
+    border: 1px solid #45404a;
+    border-radius: 16px;
+    background:
+        linear-gradient(90deg, rgba(10,10,15,.96), rgba(10,10,15,.45)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600")
+        center/cover no-repeat;
+}
+
+.community-hero-content {
+    max-width: 550px;
+}
+
+.community-hero-content h3 {
+    color: #fff;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.community-hero-content > p:not(.subtitle) {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.community-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 35px 0 55px;
+}
+
+.community-feature {
+    min-width: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid #34343b;
+    border-radius: 12px;
+    background: #191a22;
+}
+
+.feature-icon {
+    color: #e8b84a;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.community-feature h3 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.community-feature p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.community-posts {
+    margin-top: 40px;
+}
+
+.community-empty {
+    padding: 45px 20px;
+    text-align: center;
+    background: #191a22;
+    border: 1px dashed #55515a;
+    border-radius: 12px;
+}
+
+.community-empty h3 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.community-empty p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .community {
+        padding: 40px 18px;
+    }
+
+    .community-hero {
+        min-height: 300px;
+        padding: 25px;
+    }
+
+    .community-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FIX POPUP PASS VE */
+
+#sell-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#sell-popup .popup-content {
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 16px;
+    background: #171820;
+    color: white;
+}
+
+#sell-popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#sell-popup form input,
+#sell-popup form select,
+#sell-popup form textarea {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #454650;
+    border-radius: 8px;
+    background: #252630;
+    color: white;
+}
+
+#sell-popup form textarea {
+    min-height: 90px;
+}
+
+#sell-popup .btn-sell-submit {
+    min-height: 48px;
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    #sell-popup .popup-content {
+        padding: 20px;
+    }
+}
+/* =========================
+   AUTH POPUP
+========================= */
+
+.auth-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.auth-popup.active {
+    display: flex;
+}
+
+.auth-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #171717;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid #333;
+    color: white;
+    text-align: center;
+}
+
+.auth-box h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.auth-box > p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.auth-close {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#auth-form input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #252525;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+#auth-form input:focus {
+    border-color: #e50914;
+}
+
+#auth-submit {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #e50914;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#auth-submit:hover {
+    background: #c40710;
+}
+
+#auth-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ff7777;
+}
+
+.auth-switch {
+    margin-top: 22px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+#auth-switch {
+    background: none;
+    border: none;
+    color: #e50914;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* COMMUNITY POST COMPOSER */
+.post-composer {
+    background: #151923;
+    border: 1px solid #292f3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 25px 0;
+}
+
+.post-composer h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.post-composer textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    background: #0d1119;
+    border: 1px solid #343b4b;
+    border-radius: 10px;
+    padding: 16px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    font-family: inherit;
+}
+
+.post-composer textarea:focus {
+    border-color: #e5b94c;
+}
+
+.post-composer textarea::placeholder {
+    color: #858b99;
+}
+
+.post-composer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.post-composer-footer span {
+    color: #858b99;
+    font-size: 13px;
+}
+
+#submit-post {
+    background: #e5b94c;
+    color: #111111;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#submit-post:hover {
+    background: #f5cf70;
+    transform: translateY(-2px);
+}
+
+#submit-post:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#post-message {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* =====================================
+   COMMUNITY POST CARDS
+===================================== */
+
+.community-post-card {
+    background: #151923;
+    border: 1px solid #292f3d;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    transition: 0.2s;
+}
+
+.community-post-card:hover {
+    border-color: #e5b94c;
+}
+
+.community-post-card h3 {
+    color: #e5b94c;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.community-post-card small {
+    display: block;
+    color: #858b99;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.community-post-card p {
+    color: #e5e7eb;
+    font-size: 15px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* =================================
+   TICKET PASS - MEMBER PROFILE
+================================= */
+
+.btn-profile {
+    display: none;
+    padding: 11px 20px;
+    border: 1px solid #c9a45c;
+    border-radius: 6px;
+    background: transparent;
+    color: #e5c47b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-profile:hover {
+    background: #c9a45c;
+    color: #101116;
+}
+
+.profile-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.profile-popup.active {
+    display: flex;
+}
+
+.profile-box {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: 35px;
+    border: 1px solid rgba(201, 164, 92, 0.4);
+    border-radius: 14px;
+    background: #171923;
+    color: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.profile-close {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    border: none;
+    background: none;
+    color: #aaa;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.profile-subtitle {
+    margin-bottom: 10px;
+    color: #c9a45c;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.profile-box h2 {
+    margin-bottom: 10px;
+    color: #e5c47b;
+    font-size: 25px;
+}
+
+.profile-description {
+    margin-bottom: 25px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.profile-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-box label {
+    color: #e5c47b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #393b48;
+    border-radius: 6px;
+    outline: none;
+    background: #101116;
+    color: white;
+}
+
+.profile-box input:focus {
+    border-color: #c9a45c;
+}
+
+.profile-hint {
+    color: #999;
+    font-size: 12px;
+}
+
+.profile-box form button {
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #c9a45c;
+    color: #101116;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-box form button:hover {
+    background: #e5c47b;
+}
+
+#profile-message {
+    min-height: 20px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .profile-box {
+        padding: 28px 20px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .btn-profile,
+    .btn-login,
+    .btn-sell {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+}
+
+/* =====================================
+   TICKET PASS - COMMUNITY UPGRADE
+===================================== */
+
+/* POST CARD */
+
+.community-post-card {
+    width: 100%;
+    margin: 22px 0;
+    padding: 25px;
+    border: 1px solid rgba(201, 164, 92, 0.22);
+    border-radius: 12px;
+    background: #171923;
+    color: #fff;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.community-post-card:hover {
+    border-color: rgba(201, 164, 92, 0.65);
+}
+
+/* AUTHOR */
+
+.post-author-area {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.post-avatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid #c9a45c;
+    border-radius: 50%;
+    background: #252938;
+    color: #e5c47b;
+    font-weight: 700;
+}
+
+.post-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-author-info h3 {
+    margin: 0;
+    color: #e5c47b;
+    font-size: 16px;
+}
+
+.post-author-info small {
+    display: block;
+    margin-top: 5px;
+    color: #9295a3;
+    font-size: 12px;
+}
+
+/* POST CONTENT */
+
+.community-post-card .post-content {
+    margin: 0 0 20px;
+    color: #e7e7eb;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* OWNER ACTIONS */
+
+.post-owner-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.post-owner-actions button {
+    padding: 7px 13px;
+    border: 1px solid #444756;
+    border-radius: 5px;
+    background: transparent;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.post-owner-actions .post-edit-button:hover {
+    border-color: #c9a45c;
+    color: #e5c47b;
+}
+
+.post-owner-actions .post-delete-button:hover {
+    border-color: #ef6464;
+    color: #ff7777;
+}
+
+/* LIKE */
+
+.post-action-area {
+    padding: 14px 0;
+    border-top: 1px solid #303341;
+    border-bottom: 1px solid #303341;
+}
+
+.post-like-button {
+    padding: 9px 15px;
+    border: 1px solid #484b59;
+    border-radius: 6px;
+    background: transparent;
+    color: #ddd;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.post-like-button:hover {
+    border-color: #c9a45c;
+    color: #e5c47b;
+}
+
+.post-like-button.liked {
+    border-color: #c9a45c;
+    color: #e5c47b;
+}
+
+/* COMMENTS */
+
+.post-comment-section {
+    margin-top: 20px;
+}
+
+.post-comment-title {
+    margin-bottom: 15px;
+    color: #e5c47b;
+    font-size: 15px;
+}
+
+.post-comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.post-comment-item {
+    padding: 13px;
+    border-radius: 7px;
+    background: #202330;
+}
+
+.post-comment-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.post-comment-info strong {
+    color: #e5c47b;
+    font-size: 13px;
+}
+
+.post-comment-info small {
+    color: #888d9d;
+    font-size: 11px;
+}
+
+.post-comment-content {
+    margin: 0;
+    color: #ddd;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.comment-delete-button {
+    margin-top: 9px;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    color: #e98a8a;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* COMMENT FORM */
+
+.post-comment-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.post-comment-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #414452;
+    border-radius: 6px;
+    outline: none;
+    background: #101116;
+    color: white;
+}
+
+.post-comment-form input:focus {
+    border-color: #c9a45c;
+}
+
+.post-comment-form button {
+    padding: 0 20px;
+    border: none;
+    border-radius: 6px;
+    background: #c9a45c;
+    color: #101116;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.post-comment-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .community-post-card {
+        padding: 17px;
+    }
+
+    .post-comment-form {
+        flex-direction: column;
+    }
+
+    .post-comment-form button {
+        padding: 12px;
+    }
+
+    .post-comment-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* PUBLIC USER PROFILE */
+
+.public-profile-box {
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.public-profile-header {
+    text-align: center;
+    padding: 20px 0 30px;
+    border-bottom: 1px solid #393b48;
+}
+
+.public-profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #c9a45c;
+    margin-bottom: 15px;
+}
+
+.public-profile-header h2 {
+    color: #e5c47b;
+    margin-bottom: 8px;
+}
+
+.public-profile-header p {
+    color: #aaa;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.public-profile-posts {
+    padding-top: 25px;
+}
+
+.public-profile-posts h3 {
+    color: #e5c47b;
+    margin-bottom: 20px;
+}
+
+#public-profile-post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* =================================
+   NOTIFICATION SYSTEM
+================================= */
+
+.notification-button {
+    position: relative;
+    padding: 10px 14px;
+    border: 1px solid #c9a45c;
+    border-radius: 6px;
+    background: transparent;
+    color: #e5c47b;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.notification-button:hover {
+    background: #c9a45c;
+    color: #101116;
+}
+
+#notification-count {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    min-width: 19px;
+    height: 19px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    background: #e04b4b;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.notification-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 11000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.notification-popup.active {
+    display: flex;
+}
+
+.notification-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    border: 1px solid rgba(201, 164, 92, 0.4);
+    border-radius: 14px;
+    background: #171923;
+    color: white;
+}
+
+.notification-box h2 {
+    margin-bottom: 25px;
+    color: #e5c47b;
+}
+
+.notification-close {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    border: none;
+    background: none;
+    color: #aaa;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.notification-empty {
+    padding: 25px 0;
+    color: #999;
+    text-align: center;
+}
+
+.notification-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #393b48;
+    border-radius: 8px;
+    background: #20222e;
+    cursor: pointer;
+}
+
+.notification-item.unread {
+    border-left: 3px solid #c9a45c;
+    background: #292a35;
+}
+
+.notification-item p {
+    color: #eee;
+    font-size: 14px;
+}
+
+.notification-item small {
+    display: block;
+    margin-top: 7px;
+    color: #999;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .notification-box {
+        padding: 25px 18px;
+    }
+
+    .notification-button {
+        padding: 9px 11px;
+    }
+}
+/* COMMUNITY SEARCH */
+
+.community-search {
+    display: flex;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.community-search input,
+.community-search select {
+    padding: 13px 15px;
+    border: 1px solid #393b48;
+    border-radius: 7px;
+    outline: none;
+    background: #171923;
+    color: white;
+    font-size: 14px;
+}
+
+.community-search input {
+    flex: 1;
+    min-width: 0;
+}
+
+.community-search input:focus,
+.community-search select:focus {
+    border-color: #c9a45c;
+}
+
+.community-search select {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .community-search {
+        flex-direction: column;
+    }
+
+    .community-search select {
+        width: 100%;
+    }
+}
+/* NÚT CHIA SẺ BÀI VIẾT */
+
+.post-share-button {
+    padding: 9px 16px;
+    border: 1px solid #c9a45c;
+    border-radius: 6px;
+    background: transparent;
+    color: #e5c47b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.post-share-button:hover {
+    background: #c9a45c;
+    color: #101116;
+}
+
+.post-action-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* =====================================
+   TICKET MARKET - KHU VỰC RAO BÁN VÉ
+===================================== */
+
+.ticket-market {
+    padding: 80px 7%;
+    background: #101116;
+    color: #ffffff;
+}
+
+.ticket-market .section-heading {
+    margin-bottom: 35px;
+}
+
+.ticket-market .section-heading h2 {
+    font-size: 32px;
+    margin: 8px 0 12px;
+    color: #ffffff;
+}
+
+.ticket-market .section-heading p:not(.subtitle) {
+    color: #a5a5ad;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.ticket-market .subtitle {
+    color: #d6ad65;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* DANH SÁCH VÉ */
+
+.approved-ticket-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+    width: 100%;
+}
+
+.approved-ticket-list > p {
+    grid-column: 1 / -1;
+    padding: 30px;
+    text-align: center;
+    color: #a5a5ad;
+    background: #191a21;
+    border: 1px solid #292a33;
+    border-radius: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .ticket-market {
+        padding: 55px 5%;
+    }
+
+    .ticket-market .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .approved-ticket-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================
+   APPROVED TICKET CARDS
+===================================== */
+
+.approved-ticket-card {
+    background: #191a21;
+    border: 1px solid #30313a;
+    border-radius: 14px;
+    padding: 24px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+}
+
+.approved-ticket-card:hover {
+    transform: translateY(-5px);
+    border-color: #d6ad65;
+}
+
+.ticket-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.ticket-status {
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.ticket-icon {
+    font-size: 25px;
+}
+
+.ticket-movie {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 18px;
+    overflow-wrap: anywhere;
+}
+
+.ticket-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #b8b8c0;
+    font-size: 14px;
+}
+
+.ticket-details p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.ticket-card-bottom {
+    border-top: 1px solid #30313a;
+    margin-top: 22px;
+    padding-top: 18px;
+}
+
+.ticket-card-bottom strong {
+    color: #d6ad65;
+    font-size: 21px;
+}
+
+.ticket-note {
+    color: #92929c;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 14px;
+    overflow-wrap: anywhere;
+}
+
+.request-ticket-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #d6ad65;
+    color: #101116;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.request-ticket-btn:hover {
+    background: #f0c982;
+    transform: translateY(-2px);
+}
+
+.request-ticket-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+/* =====================================
+   SELLER PURCHASE REQUESTS
+===================================== */
+
+.seller-requests-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 35px;
+    background: #15161c;
+    border: 1px solid rgba(214, 173, 101, 0.2);
+    border-radius: 16px;
+}
+
+.seller-requests-section[hidden] {
+    display: none !important;
+}
+
+.seller-requests-section .section-heading {
+    margin-bottom: 30px;
+}
+
+.seller-requests-section .section-heading h2 {
+    color: #f0c982;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.seller-requests-section .section-heading p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* DANH SÁCH YÊU CẦU */
+
+.seller-request-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.seller-request-list > p {
+    grid-column: 1 / -1;
+    color: #aaa;
+    text-align: center;
+    padding: 35px 15px;
+    background: #1c1d24;
+    border-radius: 10px;
+}
+
+/* THẺ YÊU CẦU */
+
+.seller-request-card {
+    padding: 25px;
+    background: #202129;
+    border: 1px solid rgba(214, 173, 101, 0.18);
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+.seller-request-card:hover {
+    border-color: #d6ad65;
+    transform: translateY(-4px);
+}
+
+.seller-request-card h3 {
+    color: #f0c982;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.seller-request-card p {
+    color: #c4c4c4;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 9px 0;
+    overflow-wrap: anywhere;
+}
+
+/* TRẠNG THÁI */
+
+.seller-request-card .seller-request-status {
+    margin-top: 18px;
+    padding: 10px 12px;
+    background: rgba(214, 173, 101, 0.1);
+    border-radius: 7px;
+    color: #f0c982;
+    font-weight: 600;
+}
+
+/* NÚT CHẤP NHẬN / TỪ CHỐI */
+
+.seller-request-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.seller-request-actions button {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.seller-request-actions button[data-action="accepted"] {
+    background: #d6ad65;
+    color: #15161c;
+}
+
+.seller-request-actions button[data-action="accepted"]:hover {
+    background: #f0c982;
+    transform: translateY(-2px);
+}
+
+.seller-request-actions button[data-action="rejected"] {
+    background: #34353e;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+.seller-request-actions button[data-action="rejected"]:hover {
+    background: #a33e45;
+    border-color: #a33e45;
+}
+
+.seller-request-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .seller-requests-section {
+        padding: 20px 15px;
+        margin: 40px auto;
+    }
+
+    .seller-requests-section .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .seller-request-list {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-request-actions {
+        flex-direction: column;
+    }
+}
+
+/* =====================================
+   18. TICKET PASS - CHAT
+===================================== */
+
+.chat-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 25px;
+    color: #fff;
+}
+
+.chat-section h2 {
+    color: #c9a45c;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.chat-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+    min-height: 500px;
+    background: #151515;
+    border: 1px solid #383838;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.chat-sidebar {
+    padding: 20px;
+    background: #202020;
+    border-right: 1px solid #383838;
+}
+
+.chat-sidebar h3 {
+    margin: 0 0 15px;
+    color: #c9a45c;
+}
+
+#refresh-conversations {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #c9a45c;
+    color: #111;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#conversation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conversation-item {
+    width: 100%;
+    padding: 13px;
+    color: #fff;
+    text-align: left;
+    background: #303030;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.conversation-item:hover,
+.conversation-item.active {
+    background: #574727;
+    border-color: #c9a45c;
+}
+
+.chat-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+}
+
+#chat-title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #383838;
+    color: #c9a45c;
+    font-weight: bold;
+}
+
+#chat-messages {
+    flex: 1;
+    min-height: 300px;
+    max-height: 450px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 5px;
+}
+
+.chat-message {
+    align-self: flex-start;
+    max-width: 75%;
+    padding: 12px 15px;
+    background: #303030;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+    color: #fff;
+}
+
+.chat-message.mine {
+    align-self: flex-end;
+    background: #66502a;
+}
+
+.chat-message-time {
+    display: block;
+    margin-top: 7px;
+    color: #ccc;
+    font-size: 10px;
+}
+
+#chat-form {
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #383838;
+}
+
+#chat-input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    color: #fff;
+    background: #292929;
+    border: 1px solid #555;
+    border-radius: 8px;
+    outline: none;
+}
+
+#chat-input:focus {
+    border-color: #c9a45c;
+}
+
+#chat-send {
+    padding: 0 25px;
+    color: #111;
+    background: #c9a45c;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#chat-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+    .chat-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #383838;
+    }
+
+    .chat-main {
+        min-height: 450px;
+    }
+
+    .chat-message {
+        max-width: 90%;
+    }
+}
+
+/* =====================================
+   TICKET PASS - FIX ĐỘ SÁNG MÀU CHỮ
+===================================== */
+
+/* Chữ mặc định trên nền tối */
+body {
+    color: #f4f4f6;
+}
+
+/* Chữ phụ trên các khu vực nền tối */
+nav a,
+.movie-card p,
+.empty-state p,
+footer p,
+.ticket-card p,
+.hero-content > p:not(.subtitle),
+.movies-section > p,
+.featured-video > p,
+.movie-info p,
+.music-info > p:not(.subtitle),
+.community-feature p,
+.community-empty p,
+.community-post-card small,
+.post-author-info small,
+.post-comment-info small,
+.post-comment-content,
+.notification-item small,
+.notification-empty,
+.ticket-details,
+.ticket-note,
+.seller-request-card p,
+.seller-request-list > p,
+.ticket-market .section-heading p:not(.subtitle) {
+    color: #d0d2da;
+}
+
+/* Chữ trong bài viết và bình luận */
+.community-post-card .post-content {
+    color: #f1f2f5;
+}
+
+.post-owner-actions button,
+.post-like-button {
+    color: #eeeeF2;
+}
+
+.post-comment-info strong {
+    color: #f0ce83;
+}
+
+/* Ô nhập liệu */
+input,
+textarea,
+select {
+    color: #f5f5f7;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #b8bbc5;
+    opacity: 1;
+}
+
+/* Chat */
+.conversation-item {
+    color: #f5f5f7;
+}
+
+.chat-message {
+    color: #ffffff;
+}
+
+.chat-message-time {
+    color: #e0e0e5;
+}
+
+#chat-title,
+.chat-section h2 {
+    color: #f0ce83;
+}
+
+/* Thông báo */
+.notification-item p {
+    color: #ffffff;
+}
+
+.notification-item small {
+    color: #d0d2da;
+}
+
+/* Thông tin vé */
+.ticket-details {
+    color: #e0e1e6;
+}
+
+.ticket-note {
+    color: #d0d2da;
+}
+
+/* Yêu cầu mua vé */
+.seller-request-card p {
+    color: #e0e1e6;
+}
+
+/* Chữ trong popup hồ sơ */
+.profile-description,
+.profile-hint {
+    color: #d0d2da;
+}
+
+.profile-close,
+.notification-close {
+    color: #dddddf;
+}
+
+/* Trang quản trị nền sáng */
+.admin-subtitle,
+.admin-stat-card h3,
+.admin-section .ticket-card p,
+.admin-sidebar nav a,
+.sidebar-label {
+    color: #514d43;
+}
+
+/* Đảm bảo chữ trong nút vẫn rõ */
+button,
+.btn-explore,
+.btn-sell-submit,
+.request-ticket-btn,
+#submit-post {
+    font-weight: 700;
+}
+
+/* Chữ khi rê chuột */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #f0c982;
+    outline-offset: 3px;
+}
+/* FIX MÀU CHỮ PHIM ĐANG CHIẾU VÀ KHÁM PHÁ THÊM */
+
+.movies-section h2,
+.movies-section .section-title {
+    color: #f0ce83 !important;
+}
+
+.btn-explore,
+.movies-section a {
+    color: #f0ce83 !important;
+}
+.movies-section h2,
+.movies-section .section-title,
+#movies h2 {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* =====================================
+   19. TRUNG TÂM GIAO DỊCH
+===================================== */
+
+.transaction-section {
+    width: 100%;
+    padding: 55px 7%;
+    background: #101010;
+    color: #ffffff;
+}
+
+.transaction-section h2,
+.transaction-section h3,
+.transaction-section p,
+.transaction-section small {
+    color: #ffffff;
+}
+
+.transaction-section h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.transaction-section > p {
+    color: #bdbdbd;
+    margin-bottom: 25px;
+}
+
+/* NÚT LỌC */
+
+#transactions [data-filter] {
+    padding: 11px 20px;
+    margin: 0 8px 20px 0;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #242424;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#transactions [data-filter]:hover {
+    background: #383838;
+    border-color: #e50914;
+}
+
+#transactions [data-filter].active {
+    background: #e50914;
+    color: #ffffff;
+    border-color: #e50914;
+}
+
+/* DANH SÁCH GIAO DỊCH */
+
+.transaction-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* THẺ GIAO DỊCH */
+
+.transaction-card {
+    padding: 22px;
+    background: #202020;
+    border: 1px solid #383838;
+    border-radius: 12px;
+    color: #ffffff;
+    transition: 0.25s;
+}
+
+.transaction-card:hover {
+    transform: translateY(-4px);
+    border-color: #e50914;
+}
+
+.transaction-title {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.transaction-role {
+    display: inline-block;
+    padding: 6px 10px;
+    margin-bottom: 14px;
+    background: #343434;
+    color: #eeeeee;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.transaction-card p {
+    color: #dddddd;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 7px 0;
+}
+
+.transaction-status {
+    margin-top: 15px !important;
+    padding: 10px;
+    background: #303030;
+    border-left: 4px solid #f0ad4e;
+    border-radius: 5px;
+    color: #ffd27a !important;
+    font-weight: bold;
+}
+
+.transaction-date {
+    display: block;
+    margin-top: 12px;
+    color: #aaaaaa !important;
+    font-size: 12px;
+}
+
+/* HIỂN THỊ TRÊN ĐIỆN THOẠI */
+
+@media (max-width: 600px) {
+    .transaction-section {
+        padding: 35px 5%;
+    }
+
+    .transaction-section h2 {
+        font-size: 24px;
+    }
+
+    .transaction-list {
+        grid-template-columns: 1fr;
+    }
+
+    #transactions [data-filter] {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}
+
+/* =====================================
+   NÚT XÁC NHẬN HOÀN TẤT GIAO DỊCH
+===================================== */
+
+.transaction-confirmation {
+    color: #f0c674 !important;
+    font-size: 13px !important;
+    line-height: 1.6;
+    margin-top: 12px !important;
+}
+
+.transaction-confirm-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #e50914;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.transaction-confirm-button:hover {
+    background: #b80710;
+    transform: translateY(-2px);
+}
+
+.transaction-confirm-button:disabled {
+    background: #555555;
+    color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =====================================
+   20. QUẢN LÝ VÉ CÁ NHÂN
+===================================== */
+
+.my-ticket-section {
+    width: 100%;
+    padding: 55px 7%;
+    background: #151515;
+    color: #ffffff;
+}
+
+.my-ticket-section h2,
+.my-ticket-section h3,
+.my-ticket-section p {
+    color: #ffffff;
+}
+
+.my-ticket-section h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.my-ticket-section .section-heading p {
+    color: #bbbbbb;
+}
+
+/* BỘ LỌC VÉ */
+
+.my-ticket-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.my-ticket-filters button {
+    padding: 11px 18px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #252525;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.my-ticket-filters button:hover {
+    background: #383838;
+    border-color: #e50914;
+}
+
+.my-ticket-filters button.active {
+    background: #e50914;
+    border-color: #e50914;
+    color: #ffffff;
+}
+
+/* DANH SÁCH VÉ */
+
+.my-ticket-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* THẺ VÉ */
+
+.my-ticket-card {
+    padding: 22px;
+    background: #222222;
+    border: 1px solid #3b3b3b;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.my-ticket-card:hover {
+    transform: translateY(-4px);
+    border-color: #e50914;
+}
+
+.my-ticket-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.my-ticket-card p {
+    color: #dddddd;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+.my-ticket-status {
+    margin-top: 15px !important;
+    padding: 10px;
+    background: #303030;
+    border-left: 4px solid #e50914;
+    border-radius: 5px;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* ĐIỆN THOẠI */
+
+@media (max-width: 600px) {
+    .my-ticket-section {
+        padding: 35px 5%;
+    }
+
+    .my-ticket-section h2 {
+        font-size: 24px;
+    }
+
+    .my-ticket-list {
+        grid-template-columns: 1fr;
+    }
+
+    .my-ticket-filters button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   TICKET PASS - THỐNG NHẤT MÀU CHỮ
+   WHITE - BLACK - BLUE
+========================================= */
+
+:root {
+    --text-white: #ffffff;
+    --text-black: #111827;
+    --text-blue: #2563eb;
+    --text-blue-hover: #1d4ed8;
+}
+
+/* CHỮ MẶC ĐỊNH */
+
+body {
+    color: var(--text-black);
+}
+
+/* HEADER */
+
+.header,
+header {
+    color: var(--text-white);
+}
+
+.logo,
+.logo span {
+    color: var(--text-white);
+}
+
+.logo span {
+    color: var(--text-blue);
+}
+
+.header nav a,
+nav a {
+    color: var(--text-white);
+}
+
+nav a:hover {
+    color: var(--text-blue);
+}
+
+/* HERO */
+
+.hero h1,
+.hero h1 span {
+    color: var(--text-white);
+}
+
+.hero h1 span,
+.subtitle {
+    color: var(--text-blue);
+}
+
+.hero-content > p:not(.subtitle) {
+    color: var(--text-white);
+}
+
+/* TIÊU ĐỀ CÁC KHU VỰC */
+
+.section-heading h2,
+.movies-section h2,
+.featured-video h2,
+.ticket-market .section-heading h2,
+.music-section h2 {
+    color: var(--text-white);
+}
+
+.section-heading > a,
+.movies-section a {
+    color: var(--text-blue);
+}
+
+/* PHIM */
+
+.movie-card h3,
+.movie-info h3 {
+    color: var(--text-white);
+}
+
+.movie-card p,
+.movie-info p,
+.movies-section > p {
+    color: var(--text-white);
+}
+
+/* VÉ */
+
+.ticket-card h3,
+.ticket-movie {
+    color: var(--text-blue);
+}
+
+.ticket-card p,
+.ticket-details,
+.ticket-note {
+    color: var(--text-white);
+}
+
+.ticket-card span,
+.ticket-status {
+    color: var(--text-blue);
+}
+
+/* POPUP */
+
+.popup-content,
+.auth-box,
+.profile-box,
+.notification-box {
+    color: var(--text-white);
+}
+
+.popup-content h2,
+.auth-box h2,
+.profile-box h2,
+.notification-box h2 {
+    color: var(--text-blue);
+}
+
+.popup-details p,
+.auth-box > p,
+.profile-description,
+.profile-hint {
+    color: var(--text-white);
+}
+
+/* FORM VÀ Ô NHẬP */
+
+input,
+textarea,
+select {
+    color: var(--text-white);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-white);
+    opacity: 0.7;
+}
+
+label {
+    color: var(--text-white);
+}
+
+/* CỘNG ĐỒNG */
+
+.community,
+.community-post-card,
+.post-composer {
+    color: var(--text-white);
+}
+
+.community-hero-content h3,
+.community-feature h3,
+.community-post-card h3,
+.post-author-info h3,
+.post-comment-title {
+    color: var(--text-blue);
+}
+
+.community-hero-content > p,
+.community-feature p,
+.community-post-card .post-content,
+.post-comment-content {
+    color: var(--text-white);
+}
+
+.post-author-info small,
+.community-post-card small,
+.post-comment-info small {
+    color: var(--text-white);
+}
+
+/* NÚT CỘNG ĐỒNG */
+
+.post-owner-actions button,
+.post-like-button,
+.post-share-button {
+    color: var(--text-blue);
+}
+
+.post-owner-actions .post-delete-button:hover {
+    color: var(--text-blue);
+}
+
+.post-comment-info strong {
+    color: var(--text-blue);
+}
+
+/* HỒ SƠ */
+
+.profile-subtitle,
+.profile-box h2,
+.profile-box label,
+.public-profile-header h2,
+.public-profile-posts h3 {
+    color: var(--text-blue);
+}
+
+.public-profile-header p {
+    color: var(--text-white);
+}
+
+/* THÔNG BÁO */
+
+.notification-item p,
+.notification-empty {
+    color: var(--text-white);
+}
+
+.notification-item small {
+    color: var(--text-white);
+}
+
+#notification-count {
+    color: var(--text-white);
+}
+
+/* MARKETPLACE */
+
+.ticket-market,
+.approved-ticket-card,
+.seller-requests-section,
+.seller-request-card {
+    color: var(--text-white);
+}
+
+.approved-ticket-card h3,
+.seller-request-card h3,
+.seller-requests-section h2 {
+    color: var(--text-blue);
+}
+
+.ticket-details p,
+.seller-request-card p,
+.seller-requests-section .section-heading p {
+    color: var(--text-white);
+}
+
+.ticket-card-bottom strong,
+.seller-request-card .seller-request-status {
+    color: var(--text-blue);
+}
+
+/* CHAT */
+
+.chat-section,
+.chat-sidebar,
+.chat-main {
+    color: var(--text-white);
+}
+
+.chat-section h2,
+.chat-sidebar h3,
+#chat-title {
+    color: var(--text-blue);
+}
+
+.conversation-item,
+.chat-message,
+.chat-message-time {
+    color: var(--text-white);
+}
+
+/* GIAO DỊCH */
+
+.transaction-section,
+.transaction-card {
+    color: var(--text-white);
+}
+
+.transaction-section h2,
+.transaction-title {
+    color: var(--text-blue);
+}
+
+.transaction-card p,
+.transaction-section > p,
+.transaction-date {
+    color: var(--text-white);
+}
+
+.transaction-status,
+.transaction-confirmation {
+    color: var(--text-blue) !important;
+}
+
+/* VÉ CÁ NHÂN */
+
+.my-ticket-section,
+.my-ticket-card {
+    color: var(--text-white);
+}
+
+.my-ticket-section h2,
+.my-ticket-card h3 {
+    color: var(--text-blue);
+}
+
+.my-ticket-card p {
+    color: var(--text-white);
+}
+
+.my-ticket-status {
+    color: var(--text-blue) !important;
+}
+
+/* ADMIN - NỀN SÁNG */
+
+.admin-container,
+.admin-sidebar,
+.admin-stat-card,
+.admin-section,
+.admin-filters {
+    color: var(--text-black);
+}
+
+.admin-container h1,
+.admin-container h2,
+.admin-section h2,
+.admin-sidebar h2,
+.admin-filters h2 {
+    color: var(--text-blue);
+}
+
+.admin-subtitle,
+.admin-stat-card h3,
+.admin-section .ticket-card p,
+.admin-sidebar nav a,
+.sidebar-label,
+.sidebar-location {
+    color: var(--text-black);
+}
+
+.admin-stat-card p,
+.admin-section .ticket-card h3 {
+    color: var(--text-blue);
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a:focus {
+    color: var(--text-blue);
+}
+
+.admin-section #admin-post-list,
+.admin-section #admin-ticket-list,
+.admin-section #approved-ticket-list,
+.admin-section #rejected-ticket-list {
+    color: var(--text-black);
+}
+
+/* ADMIN LOGIN */
+
+.admin-login-box {
+    color: var(--text-white);
+}
+
+.admin-login-box h1,
+.admin-login-box h2 {
+    color: var(--text-blue);
+}
+
+.admin-login-box > p,
+.admin-login-box label {
+    color: var(--text-white);
+}
+
+/* FOOTER */
+
+footer {
+    color: var(--text-white);
+}
+
+footer p {
+    color: var(--text-white);
+}
+
+/* NÚT VÀ LIÊN KẾT */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline-color: var(--text-blue);
+}
+
+/* LOẠI BỎ MÀU CHỮ ĐỎ / VÀNG / XANH LÁ CŨ */
+
+#auth-submit,
+#auth-switch,
+.transaction-confirm-button,
+#transactions [data-filter].active {
+    color: var(--text-white);
+}
+
+.ticket-status,
+.transaction-status,
+.my-ticket-status,
+.seller-request-status {
+    color: var(--text-blue) !important;
+}
+
+/* TRẠNG THÁI HOVER */
+
+button:hover,
+a:hover {
+    transition: 0.2s ease;
+}
+/* =========================================
+   TICKET PASS - MODERN NEUTRAL COLOR SYSTEM
+   XÁM ĐẬM - NAVY - TRẮNG - VÀNG BE
+========================================= */
+
+:root {
+    /* MÀU CHỦ ĐẠO */
+    --tp-navy: #172B4D;
+    --tp-dark: #252B36;
+    --tp-graphite: #343A40;
+
+    /* MÀU NỀN */
+    --tp-white: #FFFFFF;
+    --tp-background: #F5F7FA;
+    --tp-light: #EEF1F5;
+
+    /* MÀU NHẤN */
+    --tp-beige: #DCCBA5;
+    --tp-beige-light: #F3EBDD;
+
+    /* MÀU CHỮ */
+    --tp-text: #252B36;
+    --tp-text-light: #64748B;
+    --tp-text-white: #FFFFFF;
+
+    /* ĐƯỜNG VIỀN */
+    --tp-border: #D9DEE7;
+}
+
+/* NỀN VÀ CHỮ MẶC ĐỊNH */
+body {
+    background-color: var(--tp-background);
+    color: var(--tp-text);
+}
+
+/* LIÊN KẾT */
+a {
+    color: var(--tp-navy);
+}
+
+a:hover {
+    color: var(--tp-graphite);
+}
+/* =========================================
+   HEADER - NAVY & WHITE
+========================================= */
+
+.header {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+    border-bottom: 1px solid var(--tp-graphite);
+}
+
+.header .logo {
+    color: var(--tp-white);
+}
+
+.header .logo span {
+    color: var(--tp-beige);
+}
+
+.header nav a {
+    color: var(--tp-white);
+    transition: 0.2s ease;
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: var(--tp-beige);
+}
+
+/* NÚT TRONG HEADER */
+.header button {
+    background: var(--tp-beige);
+    color: var(--tp-navy);
+    border: none;
+}
+
+.header button:hover {
+    background: var(--tp-white);
+    color: var(--tp-navy);
+}
+/* =========================================
+   HERO - TRANG CHỦ
+========================================= */
+
+.hero {
+    background-color: var(--tp-navy);
+    color: var(--tp-white);
+}
+
+.hero h1 {
+    color: var(--tp-white);
+}
+
+.hero h1 span {
+    color: var(--tp-beige);
+}
+
+.hero p {
+    color: var(--tp-white);
+}
+
+/* NÚT TRONG HERO */
+.hero button {
+    background: var(--tp-beige);
+    color: var(--tp-navy);
+    border: 1px solid var(--tp-beige);
+}
+
+.hero button:hover {
+    background: var(--tp-white);
+    color: var(--tp-navy);
+}
+
+/* =========================================
+   TIÊU ĐỀ CÁC KHU VỰC
+========================================= */
+
+.section-heading h2,
+.movies-section h2,
+.featured-video h2,
+.music-section h2 {
+    color: var(--tp-navy);
+}
+
+.section-heading p,
+.movies-section > p {
+    color: var(--tp-text-light);
+}
+
+.section-heading a,
+.movies-section a {
+    color: var(--tp-navy);
+}
+
+.section-heading a:hover,
+.movies-section a:hover {
+    color: var(--tp-graphite);
+}
+/* =========================================
+   MOVIE CARDS - THẺ PHIM
+========================================= */
+
+.movie-card,
+.movie-info {
+    background: var(--tp-white);
+    border: 1px solid var(--tp-border);
+    color: var(--tp-text);
+}
+
+.movie-card h3,
+.movie-info h3 {
+    color: var(--tp-navy);
+}
+
+.movie-card p,
+.movie-info p {
+    color: var(--tp-text-light);
+}
+
+/* NÚT XEM PHIM */
+.movie-card button,
+.movie-info button {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+    border: 1px solid var(--tp-navy);
+}
+
+.movie-card button:hover,
+.movie-info button:hover {
+    background: var(--tp-graphite);
+}
+
+/* NHÃN VÀ THÔNG TIN PHIM */
+.movie-card span,
+.movie-info span {
+    color: var(--tp-navy);
+}/* =========================================
+   TICKET MARKETPLACE
+========================================= */
+
+.ticket-market {
+    background: var(--tp-background);
+    color: var(--tp-text);
+}
+
+.ticket-market h2,
+.ticket-market h3 {
+    color: var(--tp-navy);
+}
+
+/* THẺ VÉ */
+.ticket-card,
+.approved-ticket-card {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.ticket-card h3,
+.approved-ticket-card h3 {
+    color: var(--tp-navy);
+}
+
+.ticket-card p,
+.approved-ticket-card p,
+.ticket-details {
+    color: var(--tp-text-light);
+}
+
+/* GIÁ VÉ */
+.ticket-card strong,
+.ticket-card-bottom strong {
+    color: var(--tp-navy);
+}
+
+/* TRẠNG THÁI VÉ */
+.ticket-status {
+    color: var(--tp-navy);
+    background: var(--tp-beige-light);
+}
+
+/* NÚT MUA VÉ */
+.ticket-card button,
+.approved-ticket-card button {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+    border: 1px solid var(--tp-navy);
+}
+
+.ticket-card button:hover,
+.approved-ticket-card button:hover {
+    background: var(--tp-graphite);
+}
+/* =========================================
+   COMMUNITY - CỘNG ĐỒNG
+========================================= */
+
+.community {
+    background: var(--tp-background);
+    color: var(--tp-text);
+}
+
+.community h2,
+.community h3 {
+    color: var(--tp-navy);
+}
+
+/* KHUNG BÀI VIẾT */
+.community-post-card,
+.post-composer,
+.community-feature {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.community-post-card h3,
+.post-author-info h3,
+.community-feature h3 {
+    color: var(--tp-navy);
+}
+
+.community-post-card p,
+.post-composer p,
+.community-feature p,
+.post-content {
+    color: var(--tp-text);
+}
+
+.community-post-card small,
+.post-author-info small {
+    color: var(--tp-text-light);
+}
+
+/* NÚT TƯƠNG TÁC */
+.post-like-button,
+.post-share-button,
+.post-owner-actions button {
+    background: var(--tp-light);
+    color: var(--tp-navy);
+    border: 1px solid var(--tp-border);
+}
+
+.post-like-button:hover,
+.post-share-button:hover,
+.post-owner-actions button:hover {
+    background: var(--tp-beige-light);
+    color: var(--tp-navy);
+}
+
+/* BÌNH LUẬN */
+.post-comment-content {
+    color: var(--tp-text);
+}
+
+.post-comment-info strong {
+    color: var(--tp-navy);
+}
+
+.post-comment-info small {
+    color: var(--tp-text-light);
+}
+/* =========================================
+   POPUP - ĐĂNG NHẬP - HỒ SƠ
+========================================= */
+
+.popup-content,
+.auth-box,
+.profile-box,
+.notification-box {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.popup-content h2,
+.auth-box h2,
+.profile-box h2,
+.notification-box h2 {
+    color: var(--tp-navy);
+}
+
+.popup-content p,
+.auth-box p,
+.profile-box p,
+.notification-box p {
+    color: var(--tp-text);
+}
+
+/* NHÃN FORM */
+.popup-content label,
+.auth-box label,
+.profile-box label {
+    color: var(--tp-navy);
+}
+
+/* Ô NHẬP */
+.popup-content input,
+.popup-content textarea,
+.auth-box input,
+.profile-box input,
+.profile-box textarea {
+    background: var(--tp-background);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.popup-content input::placeholder,
+.popup-content textarea::placeholder,
+.auth-box input::placeholder,
+.profile-box input::placeholder {
+    color: var(--tp-text-light);
+}
+
+/* NÚT POPUP */
+.popup-content button,
+.auth-box button,
+.profile-box button {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+    border: 1px solid var(--tp-navy);
+}
+
+.popup-content button:hover,
+.auth-box button:hover,
+.profile-box button:hover {
+    background: var(--tp-graphite);
+}
+
+/* THÔNG TIN HỒ SƠ */
+.profile-subtitle,
+.public-profile-header h2,
+.public-profile-posts h3 {
+    color: var(--tp-navy);
+}
+
+.profile-description,
+.profile-hint,
+.public-profile-header p {
+    color: var(--tp-text-light);
+}
+/* =========================================
+   CHAT - TIN NHẮN
+========================================= */
+
+.chat-section {
+    background: var(--tp-background);
+    color: var(--tp-text);
+}
+
+.chat-sidebar,
+.chat-main {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.chat-section h2,
+.chat-sidebar h3,
+#chat-title {
+    color: var(--tp-navy);
+}
+
+.conversation-item {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border-bottom: 1px solid var(--tp-border);
+}
+
+.conversation-item:hover,
+.conversation-item.active {
+    background: var(--tp-light);
+}
+
+.chat-message {
+    background: var(--tp-light);
+    color: var(--tp-text);
+}
+
+.chat-message-time {
+    color: var(--tp-text-light);
+}
+
+/* =========================================
+   NOTIFICATIONS - THÔNG BÁO
+========================================= */
+
+.notification-box {
+    background: var(--tp-white);
+    color: var(--tp-text);
+}
+
+.notification-item {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border-bottom: 1px solid var(--tp-border);
+}
+
+.notification-item p {
+    color: var(--tp-text);
+}
+
+.notification-item small,
+.notification-empty {
+    color: var(--tp-text-light);
+}
+
+#notification-count {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+}
+/* =========================================
+   TRANSACTIONS - GIAO DỊCH
+========================================= */
+
+.transaction-section {
+    background: var(--tp-background);
+    color: var(--tp-text);
+}
+
+.transaction-card {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.transaction-section h2,
+.transaction-title {
+    color: var(--tp-navy);
+}
+
+.transaction-card h3 {
+    color: var(--tp-navy);
+}
+
+.transaction-card p,
+.transaction-date {
+    color: var(--tp-text-light);
+}
+
+/* TRẠNG THÁI GIAO DỊCH */
+.transaction-status,
+.transaction-confirmation {
+    background: var(--tp-beige-light);
+    color: var(--tp-navy);
+}
+
+/* NÚT XÁC NHẬN */
+.transaction-card button {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+    border: 1px solid var(--tp-navy);
+}
+
+.transaction-card button:hover {
+    background: var(--tp-graphite);
+}
+
+/* =========================================
+   VÉ CỦA TÔI
+========================================= */
+
+.my-ticket-section {
+    background: var(--tp-background);
+    color: var(--tp-text);
+}
+
+.my-ticket-card {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.my-ticket-section h2,
+.my-ticket-card h3 {
+    color: var(--tp-navy);
+}
+
+.my-ticket-card p {
+    color: var(--tp-text-light);
+}
+
+.my-ticket-status {
+    background: var(--tp-beige-light);
+    color: var(--tp-navy);
+}
+/* =========================================
+   ADMIN - MODERN NEUTRAL
+========================================= */
+
+.admin-container {
+    background: var(--tp-background);
+    color: var(--tp-text);
+}
+
+.admin-sidebar {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+}
+
+.admin-sidebar h2 {
+    color: var(--tp-white);
+}
+
+.admin-sidebar nav a {
+    color: var(--tp-white);
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active {
+    background: var(--tp-graphite);
+    color: var(--tp-beige);
+}
+
+.admin-container h1,
+.admin-container h2,
+.admin-section h2 {
+    color: var(--tp-navy);
+}
+
+.admin-section,
+.admin-stat-card,
+.admin-filters {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.admin-stat-card h3 {
+    color: var(--tp-text-light);
+}
+
+.admin-stat-card p {
+    color: var(--tp-navy);
+}
+
+.admin-section p {
+    color: var(--tp-text-light);
+}
+
+/* DANH SÁCH VÉ VÀ BÀI VIẾT ADMIN */
+.admin-section .ticket-card,
+.admin-section .post-card {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+/* ĐĂNG NHẬP ADMIN */
+.admin-login-box {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.admin-login-box h1,
+.admin-login-box h2 {
+    color: var(--tp-navy);
+}
+
+.admin-login-box p,
+.admin-login-box label {
+    color: var(--tp-text);
+}
+/* =========================================
+   FORM - INPUT - SELECT
+========================================= */
+
+input,
+textarea,
+select {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--tp-text-light);
+    opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--tp-navy);
+    outline: 2px solid rgba(23, 43, 77, 0.12);
+}
+
+/* FORM TRONG ADMIN */
+.admin-container input,
+.admin-container textarea,
+.admin-container select {
+    background: var(--tp-white);
+    color: var(--tp-text);
+}
+
+/* =========================================
+   BUTTON - NÚT BẤM CHUNG
+========================================= */
+
+button {
+    transition: 0.2s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--tp-navy);
+    outline-offset: 2px;
+}
+
+/* NÚT CHÍNH */
+.primary-button,
+.submit-button {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+    border: 1px solid var(--tp-navy);
+}
+
+.primary-button:hover,
+.submit-button:hover {
+    background: var(--tp-graphite);
+}
+
+/* =========================================
+   BADGES - NHÃN TRẠNG THÁI
+========================================= */
+
+.badge,
+.status-badge {
+    background: var(--tp-beige-light);
+    color: var(--tp-navy);
+    border: 1px solid var(--tp-beige);
+}
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--tp-navy);
+    color: var(--tp-white);
+}
+
+footer h2,
+footer h3,
+footer p {
+    color: var(--tp-white);
+}
+
+footer a {
+    color: var(--tp-beige);
+}
+
+footer a:hover {
+    color: var(--tp-white);
+}
+
+/* =========================================
+   CÁC KHU VỰC PHỤ
+========================================= */
+
+.seller-requests-section,
+.seller-request-card {
+    background: var(--tp-white);
+    color: var(--tp-text);
+    border: 1px solid var(--tp-border);
+}
+
+.seller-requests-section h2,
+.seller-request-card h3 {
+    color: var(--tp-navy);
+}
+
+.seller-request-card p {
+    color: var(--tp-text-light);
+}
+
+/* =========================================
+   ĐƯỜNG VIỀN VÀ HIỆU ỨNG
+========================================= */
+
+.ticket-card,
+.movie-card,
+.community-post-card,
+.transaction-card,
+.my-ticket-card {
+    border-color: var(--tp-border);
+}
+
+.ticket-card:hover,
+.movie-card:hover,
+.community-post-card:hover {
+    border-color: var(--tp-navy);
+}
+
+/* MÀU CHỮ MẶC ĐỊNH CHO NỘI DUNG NỀN SÁNG */
+.admin-container,
+.ticket-market,
+.community,
+.chat-section,
+.transaction-section,
+.my-ticket-section {
+    color: var(--tp-text);
+}
+
+/* =========================================
+   KẾT THÚC BẢNG MÀU TICKET PASS
+========================================= */
+/* =========================================
+   FIX TEXT VISIBILITY - TICKET PASS
+========================================= */
+
+/* CHỮ MẶC ĐỊNH TRÊN NỀN SÁNG */
+.ticket-market,
+.community,
+.chat-section,
+.transaction-section,
+.my-ticket-section,
+.admin-container {
+    color: #252B36;
+}
+
+/* Ô NHẬP - CHỮ ĐẬM, DỄ ĐỌC */
+input,
+textarea,
+select {
+    background-color: #FFFFFF !important;
+    color: #252B36 !important;
+    border: 1px solid #64748B !important;
+    caret-color: #172B4D;
+}
+
+/* CHỮ GỢI Ý TRONG Ô NHẬP */
+input::placeholder,
+textarea::placeholder {
+    color: #64748B !important;
+    opacity: 1 !important;
+}
+
+/* CHỮ TRONG FORM */
+label {
+    color: #252B36;
+}
+
+/* Ô NHẬP TRONG POPUP */
+.popup-content input,
+.popup-content textarea,
+.auth-box input,
+.profile-box input,
+.profile-box textarea {
+    background: #FFFFFF !important;
+    color: #252B36 !important;
+}
+
+/* Ô NHẬP TRONG ADMIN */
+.admin-container input,
+.admin-container textarea,
+.admin-container select,
+.admin-filters input,
+.admin-filters select {
+    background: #FFFFFF !important;
+    color: #252B36 !important;
+}
+
+/* CHỮ TRONG CÁC THẺ NỀN TRẮNG */
+.movie-card,
+.ticket-card,
+.approved-ticket-card,
+.community-post-card,
+.transaction-card,
+.my-ticket-card,
+.seller-request-card {
+    color: #252B36;
+}
+
+/* CHỮ MÔ TẢ */
+.movie-card p,
+.ticket-card p,
+.community-post-card p,
+.transaction-card p,
+.my-ticket-card p {
+    color: #343A40;
+}
+
+/* CHỮ TRONG CHAT */
+.chat-message,
+.conversation-item {
+    color: #252B36;
+}
+
+/* CHỮ TRONG ADMIN */
+.admin-section,
+.admin-stat-card,
+.admin-filters {
+    color: #252B36;
+}
+/* FIX TIÊU ĐỀ VÉ ĐANG ĐƯỢC RAO BÁN */
+#ticket-market .section-heading h2,
+.ticket-market .section-heading h2 {
+    color: #172B4D !important;
+}
+
+/* MÔ TẢ BÊN DƯỚI TIÊU ĐỀ */
+#ticket-market .section-heading p,
+.ticket-market .section-heading p {
+    color: #343A40 !important;
+}
+/* FIX CHỮ BẠN LÀ NGƯỜI MUA */
+.ticket-market label,
+.ticket-market .buyer-label,
+.ticket-market .buyer-role,
+.ticket-market .purchase-role,
+label[for="buyer"] {
+    color: #172B4D !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* CHỮ TRONG KHU VỰC MUA VÉ */
+.ticket-market p,
+.ticket-market span {
+    opacity: 1;
+}
+/* FIX CHỮ BẠN LÀ NGƯỜI MUA */
+.transaction-role {
+    color: #172B4D !important;
+    background: #F3EBDD !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-weight: 700 !important;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+/* FIX NÚT KHÁM PHÁ CỘNG ĐỒNG */
+.btn-explore {
+    background: #172B4D !important;
+    color: #FFFFFF !important;
+    border: 1px solid #172B4D !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-explore:hover {
+    background: #DCCBA5 !important;
+    color: #172B4D !important;
+    border-color: #DCCBA5 !important;
+}
